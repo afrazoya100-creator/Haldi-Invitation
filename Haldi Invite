@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,539 +6,438 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zoya's Haldi Invitation 🌻</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap');
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
+<style>
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: 'Playfair Display', serif;
-  background: #ffdf62;
-  color: #80500b;
-  text-align: center;
+  min-height: 100vh;
+  background: #fff8cf;
+  color: #71400b;
+  font-family: 'Cormorant Garamond', serif;
   overflow-x: hidden;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 18px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at center, #fffef0 0%, #fff4b3 65%, #f6d768 100%);
 }
 
 .invitation {
   position: relative;
-  min-height: 100vh;
-  padding: 50px 20px;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at center, #fff6bd 0%, #ffe783 55%, #f7bd30 100%);
+  z-index: 1;
+  width: min(100%, 540px);
+  padding: 44px 24px;
+  text-align: center;
+  border: 2px solid #d9a82e;
+  outline: 1px solid #d9a82e;
+  outline-offset: 7px;
+  background: rgba(255, 255, 245, 0.91);
+  box-shadow: 0 15px 45px rgba(119, 75, 0, 0.15);
 }
 
-.content {
-  position: relative;
-  z-index: 2;
-  max-width: 650px;
-  margin: auto;
-  padding: 35px 15px;
+.top-flower,
+.bottom-flower {
+  font-size: 28px;
+  letter-spacing: 8px;
 }
 
 .bismillah {
-  font-size: 35px;
+  font-size: 29px;
+  margin: 20px 0 12px;
+  color: #96620c;
   line-height: 1.8;
-  margin-bottom: 10px;
 }
 
-.bismillah span {
-  display: block;
-  font-size: 17px;
+.intro {
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
   letter-spacing: 4px;
+  text-transform: uppercase;
+  margin: 18px 0 12px;
+  color: #93651a;
 }
 
 h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(60px, 12vw, 100px);
-  font-weight: normal;
-  margin: 25px 0 0;
-  color: #bd7900;
+  font-size: clamp(48px, 12vw, 76px);
+  font-weight: 400;
+  color: #c18a13;
+  line-height: 1.2;
+  margin: 8px 0;
 }
 
-h2 {
-  font-size: clamp(36px, 8vw, 55px);
-  font-weight: normal;
-  letter-spacing: 8px;
-  margin: 0 0 25px;
-}
-
-.intro {
-  letter-spacing: 3px;
-  line-height: 2;
-  font-size: 14px;
+.subtitle {
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 13px;
+  margin: 14px 0 24px;
 }
 
 .message {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 24px;
-  line-height: 1.5;
-  margin: 25px auto 35px;
+  font-size: 21px;
+  line-height: 1.55;
+  margin: 12px auto 22px;
+  max-width: 390px;
+}
+
+.divider {
+  color: #d2a02b;
+  margin: 18px auto;
+  letter-spacing: 7px;
 }
 
 .details {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: 35px 0;
+  font-size: 21px;
+  line-height: 1.8;
 }
 
-.detail {
-  flex: 1 1 120px;
-  padding: 12px;
-  border-right: 1px solid #d8a12d;
-}
-
-.detail:last-child {
-  border-right: none;
-}
-
-.detail .symbol {
-  font-size: 27px;
-}
-
-.detail h3 {
+.details strong {
+  font-family: 'Playfair Display', serif;
   font-size: 12px;
-  font-weight: normal;
+  text-transform: uppercase;
   letter-spacing: 3px;
+  color: #986313;
+  display: block;
+  margin-top: 12px;
 }
 
-.detail p {
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.map-button {
+.map-link {
   display: inline-block;
-  padding: 15px 30px;
-  border-radius: 40px;
-  background: #c88b05;
-  color: white;
+  margin-top: 20px;
+  padding: 12px 22px;
+  border: 1px solid #c99b28;
+  color: #7a4c06;
+  background: #fff8d9;
   text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
   letter-spacing: 1px;
-  box-shadow: 0 6px 18px #c88b0540;
-  transition: transform 0.3s;
+  transition: 0.25s;
 }
 
-.map-button:hover {
-  transform: translateY(-3px);
+.map-link:hover {
+  background: #f4d875;
 }
 
 .countdown-title {
-  margin-top: 45px;
-  letter-spacing: 5px;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  margin: 28px 0 12px;
 }
 
 .countdown {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 12px;
-  margin: 20px 0;
+  flex-wrap: wrap;
 }
 
 .time-box {
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  background: #fff4bd;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  min-width: 62px;
+  padding: 10px 7px;
+  background: #fff3bf;
+  border: 1px solid #e3c25c;
 }
 
 .time-box span {
-  font-size: 26px;
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
 }
 
 .time-box small {
-  font-size: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
   letter-spacing: 1px;
-  margin-top: 5px;
 }
 
-/* Sunflower decorations */
-.flower {
+.closing {
+  font-size: 20px;
+  font-style: italic;
+  margin-top: 24px;
+}
+
+.sunflower {
   position: absolute;
-  font-size: clamp(40px, 8vw, 85px);
-  z-index: 1;
+  font-size: 42px;
+  opacity: 0.85;
   animation: sway 4s ease-in-out infinite;
+  z-index: 0;
 }
 
-.flower.one {
-  top: 10%;
-  left: 2%;
-}
-
-.flower.two {
-  top: 20%;
-  right: 2%;
-  animation-delay: 1s;
-}
-
-.flower.three {
-  bottom: 5%;
-  left: 2%;
-  animation-delay: 2s;
-}
-
-.flower.four {
-  bottom: 5%;
-  right: 2%;
-  animation-delay: 1.5s;
-}
-
-.leaf {
-  position: absolute;
-  font-size: 25px;
-  animation: drift 7s ease-in-out infinite;
-}
-
-.leaf.one {
-  top: 35%;
-  left: 10%;
-}
-
-.leaf.two {
-  top: 45%;
-  right: 10%;
-}
-
-.leaf.three {
-  bottom: 25%;
-  left: 15%;
-}
-
-.leaf.four {
-  bottom: 30%;
-  right: 15%;
-}
+.flower1 { top: 5%; left: 5%; }
+.flower2 { top: 8%; right: 5%; animation-delay: 1s; }
+.flower3 { bottom: 5%; left: 6%; animation-delay: 2s; }
+.flower4 { bottom: 7%; right: 5%; animation-delay: 0.5s; }
 
 @keyframes sway {
-  0%, 100% { transform: rotate(-5deg); }
-  50% { transform: rotate(5deg); }
-}
-
-@keyframes drift {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(15deg); }
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
 }
 
 /* Opening curtains */
 .curtain {
   position: fixed;
   top: 0;
-  width: 52%;
-  height: 100vh;
-  z-index: 10;
+  bottom: 0;
+  width: 51%;
+  z-index: 5;
   background:
     repeating-linear-gradient(
       90deg,
-      #d99b0c 0px,
-      #ffda4e 20px,
-      #f2bd24 40px,
-      #ffe16a 60px
+      #b77a12 0px,
+      #e4b739 18px,
+      #f3d66d 35px,
+      #c28a1b 52px
     );
-  box-shadow: inset 0 0 45px #9d610b70;
-  transition: transform 2s cubic-bezier(.77, 0, .18, 1);
-}
-
-.curtain.left {
-  left: 0;
-  border-right: 4px solid #e5ad25;
-}
-
-.curtain.right {
-  right: 0;
-  border-left: 4px solid #e5ad25;
+  box-shadow: inset -12px 0 25px rgba(88, 48, 0, 0.2);
+  transition: transform 2s cubic-bezier(.65, 0, .35, 1);
 }
 
 .curtain::after {
   content: "🌻";
   position: absolute;
   top: 45%;
-  font-size: 45px;
+  font-size: 36px;
 }
 
-.curtain.left::after {
-  right: 15px;
+.curtain.left {
+  left: 0;
+  border-right: 5px solid #f5d77c;
 }
 
-.curtain.right::after {
-  left: 15px;
+.curtain.left::after { right: 18px; }
+
+.curtain.right {
+  right: 0;
+  border-left: 5px solid #f5d77c;
 }
 
-.curtain.open.left {
+.curtain.right::after { left: 18px; }
+
+.opening-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+  background: rgba(255, 244, 184, 0.2);
+  transition: opacity 0.7s ease;
+}
+
+.opening-card {
+  padding: 35px 24px;
+  width: min(100%, 400px);
+  background: rgba(255, 252, 229, 0.96);
+  border: 2px solid #d7aa38;
+  box-shadow: 0 10px 35px rgba(100, 60, 0, 0.22);
+}
+
+.opening-card .small-flower {
+  font-size: 38px;
+}
+
+.opening-card h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 51px;
+  font-weight: 400;
+  color: #b77c10;
+  margin: 10px 0;
+}
+
+.opening-card p {
+  font-size: 19px;
+  margin: 12px 0 22px;
+}
+
+#openButton {
+  border: none;
+  padding: 14px 25px;
+  background: #c38c19;
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#openButton:hover {
+  background: #98640d;
+  transform: translateY(-2px);
+}
+
+body.opened .curtain.left {
   transform: translateX(-100%);
 }
 
-.curtain.open.right {
+body.opened .curtain.right {
   transform: translateX(100%);
 }
 
-.open-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 20;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #f9d450;
-  color: #80500b;
-  transition: opacity 0.5s;
-}
-
-.open-screen h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 58px;
-  letter-spacing: 0;
-  margin: 10px;
-}
-
-.open-screen p {
-  letter-spacing: 2px;
-  margin: 10px 20px 25px;
-}
-
-.open-button {
-  border: 1px solid #a66a08;
-  border-radius: 40px;
-  background: #a66a08;
-  color: white;
-  padding: 16px 32px;
-  font: inherit;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
-.open-screen.hidden {
+body.opened .opening-screen {
   opacity: 0;
   pointer-events: none;
 }
 
-.music-button {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  z-index: 5;
-  background: #a66a08;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  font-size: 21px;
-  cursor: pointer;
+body.opened .opening-card {
+  transform: scale(0.95);
+  transition: transform 0.7s ease;
 }
 
-@media (max-width: 480px) {
-  .invitation {
-    padding: 25px 10px;
-  }
-
-  .content {
-    padding: 25px 8px;
-  }
-
-  .detail {
-    flex-basis: 95px;
-    padding: 8px 4px;
-  }
-
-  .flower.one { left: 0; }
-  .flower.two { right: 0; }
+@media (max-width: 420px) {
+  .invitation { padding: 35px 17px; }
+  .message { font-size: 19px; }
+  .details { font-size: 19px; }
+  .sunflower { font-size: 31px; }
+  .bismillah { font-size: 25px; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="open-screen" id="openScreen">
-  <div style="font-size:55px;">🌻</div>
-  <h2>Zoya's Haldi</h2>
-  <p>A little sunshine, love and celebration...</p>
-  <button class="open-button" onclick="openInvitation()">
-    Open Your Invitation ✨
-  </button>
-</div>
+<div class="sunflower flower1">🌻</div>
+<div class="sunflower flower2">🌼</div>
+<div class="sunflower flower3">🌻</div>
+<div class="sunflower flower4">🌼</div>
 
-<div class="curtain left" id="leftCurtain"></div>
-<div class="curtain right" id="rightCurtain"></div>
+<main class="page">
+  <section class="invitation">
 
-<main class="invitation">
+    <div class="top-flower">🌻 ✨ 🌻</div>
 
-  <div class="flower one">🌻</div>
-  <div class="flower two">🌻</div>
-  <div class="flower three">🌻</div>
-  <div class="flower four">🌻</div>
-
-  <div class="leaf one">🍃</div>
-  <div class="leaf two">🍃</div>
-  <div class="leaf three">🍃</div>
-  <div class="leaf four">🍃</div>
-
-  <section class="content">
-
-    <div class="bismillah">
+    <div class="bismillah" lang="ar" dir="rtl">
       بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
-      <span>Bismillah</span>
     </div>
 
-    <h1>Zoya's</h1>
-    <h2>HALDI</h2>
-
-    <p class="intro">
-      YOU ARE WARMLY INVITED TO<br>
-      CELEBRATE ZOYA'S HALDI
-    </p>
+    <p class="intro">With love and happiness</p>
 
     <p class="message">
-      Let's come together to shower<br>
-      her with love, laughter and<br>
-      a whole lot of haldi!
+      We joyfully invite you to celebrate a beautiful day filled with
+      sunshine, laughter, blessings and love.
     </p>
 
+    <div class="divider">✦ ❀ ✦</div>
+
+    <p class="subtitle">Join us for</p>
+
+    <h1>Zoya's Haldi</h1>
+
+    <p class="subtitle">A celebration in yellow</p>
+
+    <div class="divider">🌼 ✧ 🌼</div>
+
     <div class="details">
+      <strong>Date</strong>
+      Sunday, 13 December 2026
 
-      <div class="detail">
-        <div class="symbol">🗓️</div>
-        <h3>DATE</h3>
-        <p>13th December<br>Sunday</p>
-      </div>
+      <strong>Time</strong>
+      8:00 PM
 
-      <div class="detail">
-        <div class="symbol">🕗</div>
-        <h3>TIME</h3>
-        <p>8:00 PM</p>
-      </div>
-
-      <div class="detail">
-        <div class="symbol">📍</div>
-        <h3>VENUE</h3>
-        <p>Jalsa</p>
-      </div>
-
+      <strong>Venue</strong>
+      Jalsa Banquet Hall
     </div>
 
     <a
-      class="map-button"
-      href="https://maps.app.goo.gl/uqkNKR5VABf3qSbr5"
+      class="map-link"
+      href="https://www.google.com/maps/place/Jalsa+Banquet+Hall/@13.000501,77.6156935,879m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae17f048b42b37:0xab845f470c83658a!8m2!3d13.000501!4d77.6156935!16s%2Fg%2F11q867pw36?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
       target="_blank"
-      rel="noopener noreferrer">
-      📍 View on Google Maps →
+      rel="noopener noreferrer"
+    >
+      📍 OPEN MAPS
     </a>
 
-    <h3 class="countdown-title">COUNTDOWN</h3>
+    <p class="countdown-title">Counting down to the celebration</p>
 
-    <div class="countdown">
-      <div class="time-box">
-        <span id="days">00</span>
-        <small>DAYS</small>
-      </div>
-
-      <div class="time-box">
-        <span id="hours">00</span>
-        <small>HOURS</small>
-      </div>
-
-      <div class="time-box">
-        <span id="minutes">00</span>
-        <small>MINUTES</small>
-      </div>
-
-      <div class="time-box">
-        <span id="seconds">00</span>
-        <small>SECONDS</small>
-      </div>
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="time-box"><span id="days">--</span><small>Days</small></div>
+      <div class="time-box"><span id="hours">--</span><small>Hours</small></div>
+      <div class="time-box"><span id="minutes">--</span><small>Minutes</small></div>
+      <div class="time-box"><span id="seconds">--</span><small>Seconds</small></div>
     </div>
 
-    <p class="message">With love, we can't wait to celebrate with you! 💛</p>
+    <p class="closing">Your presence will make our celebration even more special. 🤍</p>
+
+    <div class="bottom-flower" style="margin-top:22px;">🌻 🌼 🌻</div>
 
   </section>
 </main>
 
-<!-- Add your own licensed music file named haldi-music.mp3
-     to the same folder as this HTML file. -->
-<audio id="bgMusic" loop>
+<!-- Add a file named haldi-music.mp3 to this repository for music -->
+<audio id="backgroundMusic" loop preload="auto">
   <source src="haldi-music.mp3" type="audio/mpeg">
 </audio>
 
-<button
-  class="music-button"
-  id="musicButton"
-  onclick="toggleMusic()"
-  aria-label="Toggle background music">
-  ♫
-</button>
+<div class="curtain left"></div>
+<div class="curtain right"></div>
+
+<div class="opening-screen" id="openingScreen">
+  <div class="opening-card">
+    <div class="small-flower">🌻</div>
+    <h2>Zoya's Haldi</h2>
+    <p>A little sunshine, a lot of love.<br>Tap to open your invitation</p>
+    <button id="openButton" type="button">OPEN INVITATION ✨</button>
+  </div>
+</div>
 
 <script>
-function openInvitation() {
-  const music = document.getElementById("bgMusic");
-
-  document.getElementById("leftCurtain").classList.add("open");
-  document.getElementById("rightCurtain").classList.add("open");
-  document.getElementById("openScreen").classList.add("hidden");
-
-  music.play().then(() => {
-    document.getElementById("musicButton").textContent = "♫";
-  }).catch(() => {
-    document.getElementById("musicButton").textContent = "▶";
-  });
-}
-
-function toggleMusic() {
-  const music = document.getElementById("bgMusic");
-  const button = document.getElementById("musicButton");
-
-  if (music.paused) {
-    music.play().then(() => {
-      button.textContent = "♫";
-    }).catch(() => {
-      button.textContent = "▶";
-    });
-  } else {
-    music.pause();
-    button.textContent = "▶";
-  }
-}
+const eventDate = new Date("2026-12-13T20:00:00+05:30").getTime();
 
 function updateCountdown() {
-  // India Standard Time is UTC+05:30.
-  const target = new Date("2026-12-13T20:00:00+05:30").getTime();
   const now = Date.now();
-  const difference = target - now;
+  const difference = eventDate - now;
 
   if (difference <= 0) {
-    document.getElementById("days").textContent = "00";
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
-    document.querySelector(".countdown-title").textContent = "THE CELEBRATION IS HERE! 🌻";
+    document.getElementById("countdown").innerHTML =
+      "<p>The celebration day is here! 🌻</p>";
     return;
   }
 
-  document.getElementById("days").textContent =
-    String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(2, "0");
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((difference / (1000 * 60)) % 60);
+  const seconds = Math.floor((difference / 1000) % 60);
 
-  document.getElementById("hours").textContent =
-    String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, "0");
-
-  document.getElementById("minutes").textContent =
-    String(Math.floor((difference / (1000 * 60)) % 60)).padStart(2, "0");
-
-  document.getElementById("seconds").textContent =
-    String(Math.floor((difference / 1000) % 60)).padStart(2, "0");
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+document.getElementById("openButton").addEventListener("click", async function () {
+  document.body.classList.add("opened");
+
+  const music = document.getElementById("backgroundMusic");
+
+  try {
+    await music.play();
+  } catch (error) {
+    console.log("Music could not start. Check that haldi-music.mp3 is uploaded.");
+  }
+});
 </script>
 
 </body>
