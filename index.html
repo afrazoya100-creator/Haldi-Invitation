@@ -1,10 +1,10 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zoya's Haldi Invitation 🌻</title>
+<title>Zoya's Haldi Invitation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
@@ -31,8 +31,12 @@ body {
   padding: 35px 18px;
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse at center, #fffef0 0%, #fff4b3 65%, #f6d768 100%);
+  background: radial-gradient(
+    ellipse at center,
+    #fffef0 0%,
+    #fff4b3 65%,
+    #f6d768 100%
+  );
 }
 
 .invitation {
@@ -44,14 +48,8 @@ body {
   border: 2px solid #d9a82e;
   outline: 1px solid #d9a82e;
   outline-offset: 7px;
-  background: rgba(255, 255, 245, 0.91);
+  background: rgba(255, 255, 245, 0.94);
   box-shadow: 0 15px 45px rgba(119, 75, 0, 0.15);
-}
-
-.top-flower,
-.bottom-flower {
-  font-size: 28px;
-  letter-spacing: 8px;
 }
 
 .bismillah {
@@ -173,48 +171,86 @@ h1 {
   margin-top: 24px;
 }
 
-.sunflower {
-  position: absolute;
-  font-size: 42px;
-  opacity: 0.85;
-  animation: sway 4s ease-in-out infinite;
-  z-index: 0;
+.bottom-flower {
+  margin-top: 22px;
+  height: 2px;
+  width: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d9a82e,
+    transparent
+  );
 }
 
-.flower1 { top: 5%; left: 5%; }
-.flower2 { top: 8%; right: 5%; animation-delay: 1s; }
-.flower3 { bottom: 5%; left: 6%; animation-delay: 2s; }
-.flower4 { bottom: 7%; right: 5%; animation-delay: 0.5s; }
+/* Falling yellow petals */
 
-@keyframes sway {
-  0%, 100% { transform: rotate(-8deg); }
-  50% { transform: rotate(8deg); }
+#petal-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 3;
+  display: none;
+}
+
+body.opened #petal-container {
+  display: block;
+}
+
+.petal {
+  position: absolute;
+  top: -35px;
+  width: 13px;
+  height: 19px;
+  background: linear-gradient(
+    135deg,
+    #fff2a1,
+    #f4ce43 55%,
+    #dba51c
+  );
+  border-radius: 90% 10% 85% 15%;
+  opacity: 0.85;
+  animation: petalFall linear infinite;
+  box-shadow: 0 1px 4px rgba(173, 119, 8, 0.15);
+}
+
+@keyframes petalFall {
+  0% {
+    transform: translate3d(0, -30px, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate3d(45px, 50vh, 0) rotate(180deg);
+  }
+  100% {
+    transform: translate3d(-35px, 110vh, 0) rotate(420deg);
+    opacity: 0;
+  }
 }
 
 /* Opening curtains */
+
 .curtain {
   position: fixed;
   top: 0;
   bottom: 0;
   width: 51%;
   z-index: 5;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      #b77a12 0px,
-      #e4b739 18px,
-      #f3d66d 35px,
-      #c28a1b 52px
-    );
+  background: repeating-linear-gradient(
+    90deg,
+    #b77a12 0px,
+    #e4b739 18px,
+    #f3d66d 35px,
+    #c28a1b 52px
+  );
   box-shadow: inset -12px 0 25px rgba(88, 48, 0, 0.2);
   transition: transform 2s cubic-bezier(.65, 0, .35, 1);
-}
-
-.curtain::after {
-  content: "🌻";
-  position: absolute;
-  top: 45%;
-  font-size: 36px;
 }
 
 .curtain.left {
@@ -222,14 +258,10 @@ h1 {
   border-right: 5px solid #f5d77c;
 }
 
-.curtain.left::after { right: 18px; }
-
 .curtain.right {
   right: 0;
   border-left: 5px solid #f5d77c;
 }
-
-.curtain.right::after { left: 18px; }
 
 .opening-screen {
   position: fixed;
@@ -250,10 +282,6 @@ h1 {
   background: rgba(255, 252, 229, 0.96);
   border: 2px solid #d7aa38;
   box-shadow: 0 10px 35px rgba(100, 60, 0, 0.22);
-}
-
-.opening-card .small-flower {
-  font-size: 38px;
 }
 
 .opening-card h2 {
@@ -305,26 +333,35 @@ body.opened .opening-card {
 }
 
 @media (max-width: 420px) {
-  .invitation { padding: 35px 17px; }
-  .message { font-size: 19px; }
-  .details { font-size: 19px; }
-  .sunflower { font-size: 31px; }
-  .bismillah { font-size: 25px; }
+  .invitation {
+    padding: 35px 17px;
+  }
+
+  .message {
+    font-size: 19px;
+  }
+
+  .details {
+    font-size: 19px;
+  }
+
+  .bismillah {
+    font-size: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal {
+    animation-duration: 20s !important;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="sunflower flower1">🌻</div>
-<div class="sunflower flower2">🌼</div>
-<div class="sunflower flower3">🌻</div>
-<div class="sunflower flower4">🌼</div>
-
 <main class="page">
   <section class="invitation">
-
-    <div class="top-flower">🌻 ✨ 🌻</div>
 
     <div class="bismillah" lang="ar" dir="rtl">
       بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
@@ -345,7 +382,7 @@ body.opened .opening-card {
 
     <p class="subtitle">A celebration in yellow</p>
 
-    <div class="divider">🌼 ✧ 🌼</div>
+    <div class="divider">✦ ✧ ✦</div>
 
     <div class="details">
       <strong>Date</strong>
@@ -364,7 +401,7 @@ body.opened .opening-card {
       target="_blank"
       rel="noopener noreferrer"
     >
-      📍 OPEN MAPS
+      OPEN MAPS
     </a>
 
     <p class="countdown-title">Counting down to the celebration</p>
@@ -376,32 +413,41 @@ body.opened .opening-card {
       <div class="time-box"><span id="seconds">--</span><small>Seconds</small></div>
     </div>
 
-    <p class="closing">Your presence will make our celebration even more special. 🤍</p>
+    <p class="closing">
+      Your presence will make our celebration even more special.
+    </p>
 
-    <div class="bottom-flower" style="margin-top:22px;">🌻 🌼 🌻</div>
+    <div class="bottom-flower"></div>
 
   </section>
 </main>
 
-<!-- Add a file named haldi-music.mp3 to this repository for music -->
+<!-- Falling petals -->
+<div id="petal-container"></div>
+
+<!-- Background music -->
 <audio id="backgroundMusic" loop preload="auto">
   <source src="haldi-music.mp3" type="audio/mpeg">
 </audio>
 
+<!-- Curtains -->
 <div class="curtain left"></div>
 <div class="curtain right"></div>
 
+<!-- Opening screen -->
 <div class="opening-screen" id="openingScreen">
   <div class="opening-card">
-    <div class="small-flower">🌻</div>
     <h2>Zoya's Haldi</h2>
     <p>Tap to open your invitation</p>
-    <button id="openButton" type="button">OPEN INVITATION ✨</button>
+    <button id="openButton" type="button">
+      OPEN INVITATION
+    </button>
   </div>
 </div>
 
 <script>
-const eventDate = new Date("2026-12-13T20:00:00+05:30").getTime();
+const eventDate =
+  new Date("2026-12-13T20:00:00+05:30").getTime();
 
 function updateCountdown() {
   const now = Date.now();
@@ -409,14 +455,25 @@ function updateCountdown() {
 
   if (difference <= 0) {
     document.getElementById("countdown").innerHTML =
-      "<p>The celebration day is here! 🌻</p>";
+      "<p>The celebration day is here!</p>";
     return;
   }
 
-  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((difference / (1000 * 60)) % 60);
-  const seconds = Math.floor((difference / 1000) % 60);
+  const days = Math.floor(
+    difference / (1000 * 60 * 60 * 24)
+  );
+
+  const hours = Math.floor(
+    (difference / (1000 * 60 * 60)) % 24
+  );
+
+  const minutes = Math.floor(
+    (difference / (1000 * 60)) % 60
+  );
+
+  const seconds = Math.floor(
+    (difference / 1000) % 60
+  );
 
   document.getElementById("days").textContent = days;
   document.getElementById("hours").textContent = hours;
@@ -427,18 +484,56 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-document.getElementById("openButton").addEventListener("click", async function () {
-  document.body.classList.add("opened");
+/* Create falling petals */
 
-  const music = document.getElementById("backgroundMusic");
+function createPetals() {
+  const container = document.getElementById("petal-container");
 
-  try {
-    await music.play();
-  } catch (error) {
-    console.log("Music could not start. Check that haldi-music.mp3 is uploaded.");
+  for (let i = 0; i < 28; i++) {
+    const petal = document.createElement("div");
+    petal.className = "petal";
+
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration =
+      (7 + Math.random() * 9) + "s";
+
+    petal.style.animationDelay =
+      (-Math.random() * 15) + "s";
+
+    petal.style.width =
+      (8 + Math.random() * 9) + "px";
+
+    petal.style.height =
+      (12 + Math.random() * 12) + "px";
+
+    container.appendChild(petal);
   }
-});
+}
+
+createPetals();
+
+/* Open invitation */
+
+document.getElementById("openButton").addEventListener(
+  "click",
+  async function () {
+
+    document.body.classList.add("opened");
+
+    const music =
+      document.getElementById("backgroundMusic");
+
+    try {
+      await music.play();
+    } catch (error) {
+      console.log(
+        "Music could not start. Check haldi-music.mp3."
+      );
+    }
+  }
+);
 </script>
 
 </body>
 </html>
+```
